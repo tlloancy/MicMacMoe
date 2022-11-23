@@ -1,0 +1,384 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://src/Objects/deuxmille/Deuxmille.gd" type="Script" id=1]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS0.gd" type="Script" id=2]
+[ext_resource path="res://assets/grid blue.png" type="Texture" id=3]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS2.gd" type="Script" id=4]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS5.gd" type="Script" id=5]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS8.gd" type="Script" id=6]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS1.gd" type="Script" id=7]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS3.gd" type="Script" id=8]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS4.gd" type="Script" id=9]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS6.gd" type="Script" id=10]
+[ext_resource path="res://src/Objects/tictac/Symbol_related/POS7.gd" type="Script" id=11]
+[ext_resource path="res://assets/new_dynamicfont.tres" type="DynamicFont" id=12]
+[ext_resource path="res://assets/tile2.png" type="Texture" id=13]
+[ext_resource path="res://src/Objects/deuxmille/tile128.tscn" type="PackedScene" id=14]
+[ext_resource path="res://src/Objects/deuxmille/tile8.tscn" type="PackedScene" id=15]
+[ext_resource path="res://src/Objects/deuxmille/tile2.tscn" type="PackedScene" id=16]
+[ext_resource path="res://src/Objects/deuxmille/tile4.tscn" type="PackedScene" id=17]
+[ext_resource path="res://src/Objects/deuxmille/tile16.tscn" type="PackedScene" id=18]
+[ext_resource path="res://src/Objects/deuxmille/tile32.tscn" type="PackedScene" id=19]
+[ext_resource path="res://src/Objects/deuxmille/tile64.tscn" type="PackedScene" id=20]
+[ext_resource path="res://src/Objects/deuxmille/tile256.tscn" type="PackedScene" id=21]
+[ext_resource path="res://src/Objects/deuxmille/tile512.tscn" type="PackedScene" id=22]
+[ext_resource path="res://src/Objects/deuxmille/tile8192.tscn" type="PackedScene" id=23]
+[ext_resource path="res://src/Objects/deuxmille/tile4096.tscn" type="PackedScene" id=24]
+[ext_resource path="res://src/Objects/deuxmille/tile2048.tscn" type="PackedScene" id=25]
+[ext_resource path="res://src/Objects/deuxmille/tile1024.tscn" type="PackedScene" id=26]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 154.871, 158.25 )
+
+[node name="Deuxmille" type="KinematicBody2D"]
+modulate = Color( 1, 1, 1, 0.760784 )
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+two_piece = ExtResource( 16 )
+four_piece = ExtResource( 17 )
+
+[node name="tictactoegrid__clipart211930" type="Sprite" parent="."]
+texture = ExtResource( 3 )
+
+[node name="tile2" parent="." instance=ExtResource( 16 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile4" parent="." instance=ExtResource( 17 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile8" parent="." instance=ExtResource( 15 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile16" parent="." instance=ExtResource( 18 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile32" parent="." instance=ExtResource( 19 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile64" parent="." instance=ExtResource( 20 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile128" parent="." instance=ExtResource( 14 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile256" parent="." instance=ExtResource( 21 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile512" parent="." instance=ExtResource( 22 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile1024" parent="." instance=ExtResource( 26 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile2048" parent="." instance=ExtResource( 25 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile4096" parent="." instance=ExtResource( 24 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile8192" parent="." instance=ExtResource( 23 )]
+visible = false
+scale = Vector2( 3, 3 )
+
+[node name="tile3" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 1714.92, -730.606 )
+scale = Vector2( 2.75165, 2.86465 )
+texture = ExtResource( 13 )
+
+[node name="OPOS0" type="CollisionShape2D" parent="."]
+position = Vector2( -529, -534.671 )
+shape = SubResource( 1 )
+script = ExtResource( 2 )
+
+[node name="OPOS1" type="CollisionShape2D" parent="."]
+position = Vector2( -179.687, -533.074 )
+shape = SubResource( 1 )
+script = ExtResource( 7 )
+
+[node name="OPOS2" type="CollisionShape2D" parent="."]
+position = Vector2( 174.011, -535.743 )
+shape = SubResource( 1 )
+script = ExtResource( 4 )
+
+[node name="OPOS3" type="CollisionShape2D" parent="."]
+position = Vector2( 530.12, -534.852 )
+shape = SubResource( 1 )
+script = ExtResource( 8 )
+
+[node name="OPOS4" type="CollisionShape2D" parent="."]
+position = Vector2( -526.158, -183.17 )
+shape = SubResource( 1 )
+script = ExtResource( 9 )
+
+[node name="OPOS5" type="CollisionShape2D" parent="."]
+position = Vector2( -178.374, -184.518 )
+shape = SubResource( 1 )
+script = ExtResource( 5 )
+
+[node name="OPOS6" type="CollisionShape2D" parent="."]
+position = Vector2( 173.621, -186.372 )
+shape = SubResource( 1 )
+script = ExtResource( 10 )
+
+[node name="OPOS7" type="CollisionShape2D" parent="."]
+position = Vector2( 534.602, -184.299 )
+shape = SubResource( 1 )
+script = ExtResource( 11 )
+
+[node name="OPOS8" type="CollisionShape2D" parent="."]
+position = Vector2( -526.124, 164.348 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS9" type="CollisionShape2D" parent="."]
+position = Vector2( -181.445, 167.739 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS10" type="CollisionShape2D" parent="."]
+position = Vector2( 177.359, 164.348 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS11" type="CollisionShape2D" parent="."]
+position = Vector2( 533.339, 167.738 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS12" type="CollisionShape2D" parent="."]
+position = Vector2( -528.949, 520.328 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS13" type="CollisionShape2D" parent="."]
+position = Vector2( -178.62, 520.328 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS14" type="CollisionShape2D" parent="."]
+position = Vector2( 174.534, 516.938 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="OPOS15" type="CollisionShape2D" parent="."]
+position = Vector2( 530.514, 516.937 )
+shape = SubResource( 1 )
+script = ExtResource( 6 )
+
+[node name="labelone" type="Label" parent="."]
+margin_left = 771.289
+margin_top = -1037.11
+margin_right = 2522.29
+margin_bottom = -564.105
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.572549, 0.101961, 0.843137, 1 )
+text = "
+
+ppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppppp
+mmmmmmmmmmmmmmmmmmll
+llllllllllllllllllllllllllllllllllllllllllllllllllll
+
+
+
+
+l
+
+
+
+"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label0" type="Label" parent="."]
+margin_left = -689.357
+margin_top = -695.008
+margin_right = -369.357
+margin_bottom = -376.008
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label1" type="Label" parent="."]
+margin_left = -344.679
+margin_top = -695.008
+margin_right = -24.6786
+margin_bottom = -376.008
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 14.1261
+margin_top = -691.617
+margin_right = 334.126
+margin_bottom = -372.617
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="."]
+margin_left = 370.106
+margin_top = -695.008
+margin_right = 690.106
+margin_bottom = -376.008
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="."]
+margin_left = -689.357
+margin_top = -345.809
+margin_right = -369.357
+margin_bottom = -26.8087
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="."]
+margin_left = -341.854
+margin_top = -345.809
+margin_right = -21.8535
+margin_bottom = -26.8087
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="."]
+margin_left = 16.9513
+margin_top = -345.809
+margin_right = 336.951
+margin_bottom = -26.8087
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label7" type="Label" parent="."]
+margin_left = 370.106
+margin_top = -345.809
+margin_right = 690.106
+margin_bottom = -26.8087
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label8" type="Label" parent="."]
+margin_left = -692.183
+margin_top = 10.1709
+margin_right = -372.183
+margin_bottom = 329.171
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label9" type="Label" parent="."]
+margin_left = -341.854
+margin_top = 13.5611
+margin_right = -21.8535
+margin_bottom = 332.561
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label10" type="Label" parent="."]
+margin_left = 11.3009
+margin_top = 10.1708
+margin_right = 331.301
+margin_bottom = 329.171
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label11" type="Label" parent="."]
+margin_left = 370.106
+margin_top = 10.1708
+margin_right = 690.106
+margin_bottom = 329.171
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label12" type="Label" parent="."]
+margin_left = -689.357
+margin_top = 362.76
+margin_right = -369.357
+margin_bottom = 681.76
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label13" type="Label" parent="."]
+margin_left = -341.853
+margin_top = 366.15
+margin_right = -21.8535
+margin_bottom = 685.15
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label14" type="Label" parent="."]
+margin_left = 14.1261
+margin_top = 362.76
+margin_right = 334.126
+margin_bottom = 681.76
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label15" type="Label" parent="."]
+margin_left = 370.106
+margin_top = 362.76
+margin_right = 690.106
+margin_bottom = 681.76
+custom_fonts/font = ExtResource( 12 )
+custom_colors/font_color = Color( 0.466667, 0.0823529, 0.760784, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

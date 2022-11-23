@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://assets/lightsaberCrossViectory.png" type="Texture" id=1]
+[ext_resource path="res://src/Objects/tictac/lightsaberCrossVictory.gd" type="Script" id=2]
+
+[node name="Light" type="Area2D"]
+scale = Vector2( 0.25, 0.25 )
+collision_layer = 4
+script = ExtResource( 2 )
+
+[node name="Fichier 3" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+[connection signal="body_entered" from="." to="." method="_on_Cross_body_entered"]

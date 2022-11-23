@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/Ai/ai_duemil.gd" type="Script" id=1]
+
+[node name="ia_duemil" type="Node"]
+script = ExtResource( 1 )

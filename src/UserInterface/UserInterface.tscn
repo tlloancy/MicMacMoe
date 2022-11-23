@@ -1,0 +1,260 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://src/UserInterface/UserInterface.gd" type="Script" id=1]
+[ext_resource path="res://src/UserInterface/Title.tscn" type="PackedScene" id=2]
+[ext_resource path="res://src/UserInterface/ChangeSceneButton.tscn" type="PackedScene" id=3]
+[ext_resource path="res://src/UserInterface/QuitButton.tscn" type="PackedScene" id=4]
+[ext_resource path="res://src/UserInterface/RetryButton.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/ui_theme.tres" type="Theme" id=6]
+[ext_resource path="res://assets/pause2.png" type="Texture" id=7]
+[ext_resource path="res://src/UserInterface/pauseButton.gd" type="Script" id=8]
+[ext_resource path="res://assets/leftArrow.png" type="Texture" id=9]
+[ext_resource path="res://assets/rightArrow.png" type="Texture" id=10]
+[ext_resource path="res://src/UserInterface/RightArrowButton3.gd" type="Script" id=11]
+[ext_resource path="res://src/UserInterface/LeftArrowButton2.gd" type="Script" id=12]
+[ext_resource path="res://src/UserInterface/BumpButton2.gd" type="Script" id=13]
+[ext_resource path="res://assets/bumper.png" type="Texture" id=14]
+[ext_resource path="res://assets/rightArrow2.png" type="Texture" id=15]
+[ext_resource path="res://assets/leftArrow2.png" type="Texture" id=16]
+[ext_resource path="res://assets/pause.png" type="Texture" id=17]
+[ext_resource path="res://src/UserInterface/BumpButton.gd" type="Script" id=18]
+[ext_resource path="res://src/UserInterface/HSlider.gd" type="Script" id=19]
+
+[node name="UserInterface" type="Control"]
+pause_mode = 2
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 6 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 296.035, 683.623, 367.962 ],
+"_edit_use_anchors_": false,
+"_edit_vertical_guides_": [ 352.218, 1750.73 ]
+}
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -195.0
+margin_top = 60.0
+margin_right = -74.0
+margin_bottom = 91.0
+text = "Score: %s"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pauseb" type="Control" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -20.0
+margin_right = 20.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pauseButton" type="TouchScreenButton" parent="pauseb"]
+position = Vector2( -11.6551, 6.84399 )
+scale = Vector2( 0.1, 0.1 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 7 )
+script = ExtResource( 8 )
+
+[node name="Button2" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 0.4
+anchor_right = 1.0
+anchor_bottom = 0.4
+margin_left = -1031.62
+margin_top = -18.2937
+margin_right = -1019.62
+margin_bottom = 18.7062
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RightArrowButton3" type="TouchScreenButton" parent="Button2"]
+visible = false
+position = Vector2( 605.524, 12.2085 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 15 )
+script = ExtResource( 11 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Button" type="Control" parent="."]
+anchor_left = -0.002
+anchor_top = 0.4
+anchor_right = -0.002
+anchor_bottom = 0.4
+margin_left = -5.57309
+margin_top = -18.2937
+margin_right = 6.42691
+margin_bottom = 18.7062
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LeftArrowButton2" type="TouchScreenButton" parent="Button"]
+visible = false
+position = Vector2( 2.66968, 0 )
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 16 )
+script = ExtResource( 12 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="jump2" type="Control" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -40.0
+margin_top = -40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BumpButton2" type="TouchScreenButton" parent="jump2"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -893.287, -830.61 )
+scale = Vector2( 8.65885, 11.0507 )
+normal = ExtResource( 14 )
+script = ExtResource( 13 )
+
+[node name="jump1" type="Control" parent="."]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -40.0
+margin_right = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BumpButton" type="TouchScreenButton" parent="jump1"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 0.473816, -825.922 )
+scale = Vector2( 9.05481, 10.9906 )
+normal = ExtResource( 14 )
+script = ExtResource( 18 )
+
+[node name="PauseOverlay" type="ColorRect" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -1.55087
+margin_top = -3.0
+margin_right = -1.5509
+margin_bottom = -3.0
+color = Color( 0, 0, 0, 0.196078 )
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="Title" parent="PauseOverlay" instance=ExtResource( 2 )]
+margin_left = -157.0
+margin_top = 135.0
+margin_right = 187.0
+margin_bottom = 192.0
+text = "Paused"
+
+[node name="ProgressBar" type="ProgressBar" parent="PauseOverlay"]
+visible = false
+anchor_top = 0.5
+anchor_bottom = 0.5
+margin_left = 100.0
+margin_top = -15.5
+margin_right = 400.0
+margin_bottom = 15.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider" type="HSlider" parent="PauseOverlay"]
+margin_left = 354.726
+margin_top = 335.378
+margin_right = 514.726
+margin_bottom = 351.378
+rect_scale = Vector2( 1.24, 0.968366 )
+min_value = -24.0
+max_value = 24.0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSlider2" type="HSlider" parent="PauseOverlay"]
+margin_left = 1395.45
+margin_top = 329.562
+margin_right = 1555.45
+margin_bottom = 345.562
+rect_scale = Vector2( 1.04603, 0.832719 )
+value = 100.0
+script = ExtResource( 19 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBar2" type="ProgressBar" parent="PauseOverlay"]
+visible = false
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_left = -400.0
+margin_top = -15.5
+margin_right = -100.0
+margin_bottom = 15.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PauseMenu" type="VBoxContainer" parent="PauseOverlay"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -108.0
+margin_top = -34.0
+margin_right = 162.0
+margin_bottom = 201.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RetryButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 5 )]
+margin_right = 270.0
+margin_bottom = 75.0
+
+[node name="ChangeSceneButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 3 )]
+margin_top = 79.0
+margin_right = 270.0
+margin_bottom = 155.0
+text = "Main Screen"
+next_scene_path = "res://src/Screens/MainScreen.tscn"
+
+[node name="QuitButton" parent="PauseOverlay/PauseMenu" instance=ExtResource( 4 )]
+margin_top = 159.0
+margin_right = 270.0
+margin_bottom = 235.0
+[connection signal="pressed" from="pauseb/pauseButton" to="pauseb/pauseButton" method="_on_button_pressed"]
+[connection signal="released" from="pauseb/pauseButton" to="pauseb/pauseButton" method="_on_button_released"]
+[connection signal="pressed" from="Button2/RightArrowButton3" to="Button2/RightArrowButton3" method="_on_button_pressed"]
+[connection signal="released" from="Button2/RightArrowButton3" to="Button2/RightArrowButton3" method="_on_button_released"]
+[connection signal="pressed" from="Button/LeftArrowButton2" to="Button/LeftArrowButton2" method="_on_button_pressed"]
+[connection signal="released" from="Button/LeftArrowButton2" to="Button/LeftArrowButton2" method="_on_button_released"]
+[connection signal="pressed" from="jump2/BumpButton2" to="jump2/BumpButton2" method="_on_button_pressed"]
+[connection signal="released" from="jump2/BumpButton2" to="jump2/BumpButton2" method="_on_button_released"]
+[connection signal="pressed" from="jump1/BumpButton" to="jump1/BumpButton" method="_on_button_pressed"]
+[connection signal="released" from="jump1/BumpButton" to="jump1/BumpButton" method="_on_button_released"]
+[connection signal="value_changed" from="PauseOverlay/HSlider" to="PauseOverlay/HSlider" method="_on_HSlider_value_changed"]
+[connection signal="value_changed" from="PauseOverlay/HSlider2" to="." method="_on_HSlider2_value_changed"]
+[connection signal="value_changed" from="PauseOverlay/HSlider2" to="PauseOverlay/HSlider2" method="_on_HSlider2_value_changed"]
